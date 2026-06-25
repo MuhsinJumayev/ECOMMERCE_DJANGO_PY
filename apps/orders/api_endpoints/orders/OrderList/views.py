@@ -6,7 +6,7 @@ from apps.orders.models import Order
 
 
 @api_view(['GET'])
-def order_list(request):
+def order_list_view(request):
     orders = Order.objects.all()
     serializer = OrderListSerializer(orders, many=True)
     return Response(serializer.data)
